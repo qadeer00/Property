@@ -4,12 +4,12 @@
 	<title>Login V3</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 @include('style')
 <!--===============================================================================================-->
 </head>
 <body>
-	
+
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
@@ -24,9 +24,8 @@
 					<div class="row">
 
 					<div class="col">
-						<select class="custom-select">
+						<select class="custom-select form-control mb-4">
   <option selected>Select Role</option>
-  
   <option value="admin">Admin</option>
   <option value="Agent">Agent</option>
 </select>
@@ -65,10 +64,10 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 	<div id="dropDownSelect1"></div>
-	
+
 <!--===============================================================================================-->
 	@include('js')
 
