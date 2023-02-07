@@ -27,6 +27,6 @@ class UserMiddleware
     else{
         return redirect('/')->with('error','Please Login first');
     }
-    //return $next($request);
+    return $next($request);
     }
 }

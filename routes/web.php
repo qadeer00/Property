@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AgentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('signin');
-});
+})->name('/');
+
 Route::get('master', function () {
     return view('master');
 })->middleware('admin_role');
@@ -26,6 +27,10 @@ Route::get('logout', function () {
      Session::flush();
      return redirect('/');
 })->name('logout');
+Route::get('agent/register', function () {
+    return view('admin.add_agent');
+})->name('add-agent')->middleware('admin_role');
+Route::post('agent/register', [App\Http\Controllers\AgentController::class, 'addAgent'])->name('add_agent')->middleware('admin_role');
     Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('admin_role');
 Route::get('agent/home', [App\Http\Controllers\HomeController::class, 'agentHome'])->name('agent.home')->middleware('user_role');
 
