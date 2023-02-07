@@ -11,8 +11,8 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Ample Admin Lite Template by WrapPixel</title>
-  @include('style')
+    <title>Property </title>
+  @include('layouts.style')
 </head>
 
 <body>
@@ -25,6 +25,7 @@
             <div class="lds-pos"></div>
         </div>
     </div>
+    
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -34,12 +35,12 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
-           @include('header')
+           @include('agent.header')
         </header>
      
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
-            @include('sidebar')
+            @include('layouts.sidebar')
                        <!-- End Sidebar scroll-->
         </aside>
         <!-- ============================================================== -->
@@ -219,7 +220,7 @@
     </div>
   
    
-@include('js')
+@include('layouts.js')
 </body>
 
 </html>
