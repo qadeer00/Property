@@ -19,8 +19,13 @@ Route::get('/', function () {
 });
 Route::get('master', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return view('master')->middleware('admin_role');
 });
+=======
+    return view('master');
+})->middleware('admin_role');
+>>>>>>> 81b2e8c73c4fa3ec75d2e444ce8cd867de5e95dc
 =======
     return view('master');
 })->middleware('admin_role');
