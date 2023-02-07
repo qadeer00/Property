@@ -53,7 +53,7 @@ class LoginController extends Controller
             }
         }
         else{
-            return back()->with('error', 'Please Put Correct Login Credentials');
+            return back()->with('error', 'Invalid Email/Password');
         }
 
     }

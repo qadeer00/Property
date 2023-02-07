@@ -22,7 +22,10 @@ Route::get('master', function () {
 })->middleware('admin_role');
 
 Auth::routes();
-
+Route::get('logout', function () {
+     Session::flush();
+     return redirect('/');
+})->name('logout');
     Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('admin_role');
 Route::get('agent/home', [App\Http\Controllers\HomeController::class, 'agentHome'])->name('agent.home')->middleware('user_role');
 
