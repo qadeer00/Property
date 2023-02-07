@@ -9,7 +9,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
- {{session()->get('error')}}
+
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
@@ -23,6 +23,16 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 					<div class="row">
+
+                        @if (session()->has('error'))
+                        <div class="alert alert-danger sm" role="alert">
+                            <h4 class="alert-heading">{{session()->get('error')}}
+                            </h4>
+                            <p></p>
+                            <p class="mb-0"></p>
+                          </div>
+                        @endif
+
 					<div class="col">
 						<select class="custom-select form-control mb-4">
                             <option selected>Select Role</option>

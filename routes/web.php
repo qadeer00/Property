@@ -32,9 +32,12 @@ Route::get('master', function () {
 >>>>>>> 81b2e8c73c4fa3ec75d2e444ce8cd867de5e95dc
 
 Auth::routes();
-
-    Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->middleware('admin_role');
-Route::get('agent/home', [App\Http\Controllers\HomeController::class, 'agentHome'])->middleware('user_role');
+Route::get('logout', function () {
+     Session::flush();
+     return redirect('/');
+})->name('logout');
+    Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('admin_role');
+Route::get('agent/home', [App\Http\Controllers\HomeController::class, 'agentHome'])->name('agent.home')->middleware('user_role');
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->name('admin.home')->middleware('Auth','user_role');
