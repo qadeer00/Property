@@ -65,7 +65,7 @@
                 <!-- End Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                   
+
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
@@ -380,7 +380,7 @@
                                         <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
                                         <div class="comment-footer d-md-flex align-items-center">
                                              <span class="badge bg-primary rounded">Pending</span>
-                                             
+
                                             <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
                                         </div>
                                     </div>
@@ -394,7 +394,7 @@
                                         <div class="comment-footer d-md-flex align-items-center">
 
                                             <span class="badge bg-success rounded">Approved</span>
-                                            
+
                                             <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
                                         </div>
                                     </div>
@@ -408,7 +408,7 @@
                                         <div class="comment-footer d-md-flex align-items-center">
 
                                             <span class="badge rounded bg-danger">Rejected</span>
-                                            
+
                                             <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
                                         </div>
                                     </div>
@@ -550,12 +550,7 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+    <h1>Added</h1>
 @include('js')
 </body>
 
