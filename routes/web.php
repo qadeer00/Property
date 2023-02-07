@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('signin');
 });
 Route::get('master', function () {
-    return view('master')->middleware('admin_role');
+    return view('agent.master')->middleware('admin_role');
 });
 
 Auth::routes();
