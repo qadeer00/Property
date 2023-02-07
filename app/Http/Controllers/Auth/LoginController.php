@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -36,5 +36,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    public function login(request $request){
+
+        $request->validate([
+
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+        if(auth()->attempt(array('email'=>$request['email'], 'password'=>$request['password']))){
+            if(auth()->user()->role==1){
+                return redirect()->route('admin.home');
+            }
+            elseif(auth()->user()->role==2){
+                return redirect()->route('agent.home');
+            }
+        }
+        else{
+            return back()->with('error', 'Please Put Correct Login Credentials');
+        }
+
     }
 }

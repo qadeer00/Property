@@ -9,37 +9,46 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
+ {{session()->get('error')}}
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<div class="login100-form validate-form">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
-
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 					<div class="row">
-
 					<div class="col">
 						<select class="custom-select form-control mb-4">
-  <option selected>Select Role</option>
-  <option value="admin">Admin</option>
-  <option value="Agent">Agent</option>
-</select>
+                            <option selected>Select Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="Agent">Agent</option>
+                        </select>
 						</div>
 					</div>
-
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" type="email" name="username" placeholder="Username"  autofocus>
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 					</div>
 
 					<div class="contact100-form-checkbox">
@@ -49,16 +58,18 @@
 						</label>
 					</div>
 
-					<div class="container-login100-form-btn">
+                    <div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
-						</button>
+                        {{ __('Login') }}
+                    </button>
 					</div>
 
 					<div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							Forgot Password?
+                        @if (Route::has('password.request'))
+						<a class="txt1" href="{{ route('password.request') }}">
+							{{ __('Forgot Your Password?') }}
 						</a>
+                        @endif
 					</div>
 				</form>
 			</div>
